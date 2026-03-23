@@ -1111,7 +1111,7 @@ body.dark-mode .payment-card-detail .detail-value {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 20px 30px var(--shadow);
-    border: 4px solid var(--peach);
+    border: 4px solid var(--sky);
 }
 
 .tutor-info {
