@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Classroom · flexible tutoring</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff8a5c' d='M75 50c0-8-6-15-14-15-3 0-6 1-9 3-2-7-8-12-16-12-9 0-16 7-16 16 0 1 0 2 0 3-7 1-12 7-12 14 0 8 7 15 15 15h32c8 0 15-7 15-15 0-2 0-4-1-6 3-2 6-5 6-9z'/%3E%3C/svg%3E">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Betania+Patmos+In+GDL&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Comfortaa:wght@400;600&family=Pacifico&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Doodles (now adaptive) -->
+    <div class="doodles">
+        <div class="doodle doodle1"></div>
+        <div class="doodle doodle2"></div>
+        <div class="doodle doodle3"></div>
+        <div class="doodle doodle4"></div>
+        <div class="doodle doodle5"></div>
+        <div class="doodle doodle6"></div>
+        <div class="doodle doodle7"></div>
+        <div class="doodle doodle8"></div>
+    </div>
+
+    <!-- Sticky navigation with glass effect -->
+ <!-- Hidden checkbox (now outside nav) -->
+<input type="checkbox" id="menuToggle" class="menu-toggle">
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo"><i class="fa-solid fa-cloud"></i> <span class="cursive-logo">Cloud Classroom</span></div>
+
+    <!-- Desktop Navigation (hidden on mobile) -->
+    <div class="nav-links">
+        <a href="#" data-page="home" class="nav-link active">Home</a>
+        <a href="#" data-page="subjects" class="nav-link">Subjects</a>
+        <a href="#" data-page="pricing" class="nav-link">Pricing</a>
+        <a href="#" data-page="faq" class="nav-link">FAQ</a>
+        <a href="#" data-page="contact" class="nav-link">Contact</a>
+        <a href="#" data-page="contact" class="cta-nav" id="scheduleBtn"><i class="fa-regular fa-calendar-check"></i> Schedule session</a>
+    </div>
+
+    <!-- Dark mode toggle (desktop) -->
+    <div class="dark-mode-toggle desktop-toggle">
+        <i class="fa-regular fa-moon" id="darkModeIcon"></i>
+    </div>
+
+    <!-- Hamburger label (stays inside nav) -->
+    <label for="menuToggle" class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </label>
+</nav>
+
+<!-- Mobile Menu (controlled by checkbox) -->
+<div class="mobile-menu">
+    <label for="menuToggle" class="close-btn"><i class="fa-solid fa-times"></i></label>
+    <a href="#" data-page="home" class="nav-link">Home</a>
+    <a href="#" data-page="subjects" class="nav-link">Subjects</a>
+    <a href="#" data-page="pricing" class="nav-link">Pricing</a>
+    <a href="#" data-page="faq" class="nav-link">FAQ</a>
+    <a href="#" data-page="contact" class="nav-link">Contact</a>
+    <a href="#" data-page="contact" class="cta-nav mobile-cta"><i class="fa-regular fa-calendar-check"></i> Schedule session</a>
+    
+    <!-- Mobile dark mode toggle -->
+    <div class="dark-mode-toggle mobile-toggle">
+        <i class="fa-regular fa-moon" id="darkModeIconMobile"></i>
+    </div>
+</div>
+    <!-- Main content -->
+    <main id="page-content">
+        <!-- HOME PAGE -->
+        <section id="home-page" class="page active-page">
+            <div class="hero blur-bg sticky-section">
+                <div class="hero-left">
+                    <span class="badge-soft"><i class="fa-solid fa-star"></i> Planning as light as a cloud</span>
+                    <h1 style="margin-top: 1rem;">Clear skies for <br><span class="cursive-headline">learning.</span></h1>
+                    <p>Flexible tutoring for high school & IGCSE students. <br>Calm support, expert guidance — tailored to your pace.</p>
+                    <div class="btn-group">
+                        <a href="#" data-page="subjects" class="btn-primary"><i class="fa-regular fa-compass"></i> View subjects</a>
+                        <a href="#" data-page="contact" class="btn-secondary"><i class="fa-regular fa-comment"></i> Free consultation</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <!-- Free high‑resolution image from Unsplash (student studying). Replace with your own. -->
+                    <source srcset="studying.webp" type="image/webp">
+                    <img src="studying.jpg" alt="Student studying with laptop and books">
+                </div>
+            </div>
+
+            <div class="cascade-bg sticky-section" style="padding-top: 3rem;">
+                <h2 style="text-align: center; color: chocolate;"><span class="cursive-highlight">Your flexible path</span> </h2>
+                <div class="steps">
+                    <div class="step-card">
+                        <i class="fa-solid fa-compass"></i>
+                        <h3>1. Tell us your goals</h3>
+                        <p>We'll talk about what you want to achieve — catching up, exam prep, or getting ahead.</p>
+                    </div>
+                    <div class="step-card">
+                        <i class="fa-solid fa-feather"></i>
+                        <h3>2. Light plan</h3>
+                        <p>Together we build a flexible schedule that adapts to your life. No rigid pressure.</p>
+                    </div>
+                    <div class="step-card">
+                        <i class="fa-solid fa-star"></i>
+                        <h3>3. Great results</h3>
+                        <p>Build confidence, master subjects, and succeed in exams at your own pace.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sticky-section" style="padding: 4rem 5%;">
+                <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center;">
+                    <div style="flex: 1;">
+                        <h2>My approach: <span class="cursive-approach">calm, expert & flexible</span></h2>
+                        <p style="font-size: 1.2rem; margin: 1rem 0 1.5rem;">No two students are alike. I offer truly flexible hours— mornings, evenings, or weekends—so learning fits your family’s rhythm. With 2 years of experience guiding IGCSE and high school students, I help turn stress into clarity.</p>
+                        <p><i class="fa-regular fa-circle-check" style="color: var(--sky);"></i> Engaging teaching style</p>
+                        <p><i class="fa-regular fa-circle-check" style="color: var(--sky);"></i> 100% flexible scheduling</p>
+                        <p><i class="fa-regular fa-circle-check" style="color: var(--sky);"></i> Track record of exam success</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="testimonial-card">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <p>My son was able to pass his final exams with confidence, thanks to Joseph's patient and flexible approach. He actually began to enjoy Mathematics in his final year!</p>
+                            <div class="attribution">— Parent of Year 11 student</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutor Bio & Credentials (now properly wrapped) -->
+            <div class="tutor-bio-container">
+                <div class="tutor-bio-card">
+                    <div class="tutor-photo">
+                        <!-- Replace with your actual photo or keep the icon -->                        
+                            <img src="profilepic2.png" alt="Photo of tutor Joseph Kariuki" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"" loading="lazy">                     
+                    </div>
+                    <div class="tutor-info">
+                        <span class="badge-soft"><i class="fa-solid fa-star"></i> Meet your tutor</span>
+                        <h2>Hi, I'm <span class="cursive-highlight">Joseph Kariuki</span></h2>
+                        <p class="tutor-tagline">Passionate educator with 2 years of experience helping students shine.</p>
+                        
+                        <div class="tutor-credentials">
+                            <div class="credential-item">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span><strong>Diploma in Information Technology</strong> – KCA University</span>
+                            </div>
+                            <div class="credential-item">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                                <span><strong>IGCSE & High School Specialist</strong> – Maths, Humanities, Sciences</span>
+                            </div>
+                            <div class="credential-item">
+                                <i class="fa-regular fa-clock"></i>
+                                <span><strong>About 2 years</strong> of one-on-one & group tutoring</span>
+                            </div>
+                            <div class="credential-item">
+                                <i class="fa-solid fa-heart"></i>
+                                <span><strong>Patient, flexible, and student‑centered</strong> approach</span>
+                            </div>
+                        </div>
+
+                        <p class="tutor-bio-text">
+                            I believe every student learns differently. My goal is to create a calm, supportive space where questions are welcome and progress happens naturally. Whether you're preparing for IGCSE exams or need help keeping up with class, I'll tailor each session to your unique pace and style.
+                        </p>
+
+                        <!-- Personal goal statement -->
+                        <div class="tutor-goal">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <p><strong>My dream:</strong> I'm saving to pursue a Diploma in Education – your support through tutoring helps make that possible. Thank you for being part of my journey! 🙏</p>
+                        </div>
+
+                        <!-- Fundraising Progress Bar -->
+                        <div class="fund-progress" id="fundProgress">
+                            <div class="fund-header">
+                                <span><i class="fa-solid fa-piggy-bank"></i> Diploma Fund Progress</span>
+                                <!-- Pencil icon removed -->
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;">0%</div>                               
+                            </div>
+                            <div class="fund-stats">
+                                <span id="currentAmount">0</span> / <span id="targetAmount">200,000</span> KES raised
+                            </div>
+                            <p class="fund-note">Every session brings me closer to my Diploma in Education. Thank you for your support! 🙏</p>
+
+                            <!-- Hidden update form (appears on double‑click or Ctrl+Shift+Q) -->
+                            <div class="fund-update-form" id="fundUpdateForm">
+                                <h4>Update amount raised</h4>
+                                <input type="number" id="newAmount" placeholder="Enter new amount (KES)" min="0" step="100">
+                                <button id="saveAmountBtn" class="btn-primary">Save</button>
+                                <button id="cancelUpdateBtn" class="btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="btn-group" style="margin-top: 1.5rem;">
+                            <a href="#" data-page="contact" class="btn-primary"><i class="fa-regular fa-calendar-check"></i> Book a session</a>
+                            <a href="#" data-page="subjects" class="btn-secondary"><i class="fa-regular fa-compass"></i> View subjects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- End of home page -->
+
+        <!-- SUBJECTS PAGE -->
+        <section id="subjects-page" class="page">
+            <h2 style="text-align: center; margin-top: 2rem;">All subjects offered</h2>
+<p class="subhead" style="text-align: center;">Choose from a wide range of IGCSE & high school subjects</p>
+
+<!-- IGCSE Section -->
+<h1 style="margin-top: 3rem; font-weight: 700; text-align: center;" class="igcse">📘 IGCSE (Pearson · Edexcel · CAIE)</h1>
+<div class="subjects-grid" style="padding: 2rem 5%;">
+    <!-- Maths -->
+    <div class="subject-item" data-subject="Maths">
+        <i class="fa-solid fa-calculator"></i>
+        <span>Mathematics</span>
+        <ul class="subject-desc">
+            <li>Algebra, geometry, trigonometry</li>
+            <li>Statistics & probability</li>
+            <li>Problem‑solving techniques</li>
+        </ul>
+    </div>
+    <!-- English -->
+    <div class="subject-item" data-subject="English">
+        <i class="fa-solid fa-book-open"></i>
+        <span>English</span>
+        <ul class="subject-desc">
+            <li>Reading comprehension</li>
+            <li>Essay writing & analysis</li>
+            <li>Grammar & vocabulary</li>
+        </ul>
+    </div>
+    <!-- Geography -->
+    <div class="subject-item" data-subject="Geography">
+        <i class="fa-solid fa-earth-europe"></i>
+        <span>Geography</span>
+        <ul class="subject-desc">
+            <li>Physical & human geography</li>
+            <li>Map reading & fieldwork</li>
+            <li>Environmental issues</li>
+        </ul>
+    </div>
+    <!-- History -->
+    <div class="subject-item" data-subject="History">
+        <i class="fa-solid fa-clock"></i>
+        <span>History</span>
+        <ul class="subject-desc">
+            <li>World & African history</li>
+            <li>Source analysis</li>
+            <li>Essay & exam skills</li>
+        </ul>
+    </div>
+    <!-- ICT -->
+    <div class="subject-item" data-subject="ICT">
+        <i class="fa-solid fa-laptop"></i>
+        <span>ICT</span>
+        <ul class="subject-desc">
+            <li>Digital literacy</li>
+            <li>Spreadsheets & databases</li>
+            <li>Internet safety</li>
+        </ul>
+    </div>
+    <!-- Computer Studies -->
+    <div class="subject-item" data-subject="Comp. Studies">
+        <i class="fa-solid fa-microchip"></i>
+        <span>Comp. Studies</span>
+        <ul class="subject-desc">
+            <li>Programming basics</li>
+            <li>Algorithms & logic</li>
+            <li>System fundamentals</li>
+        </ul>
+    </div>
+    <!-- Chemistry -->
+    <div class="subject-item" data-subject="Chemistry">
+        <i class="fa-solid fa-flask"></i>
+        <span>Chemistry</span>
+        <ul class="subject-desc">
+            <li>Atomic structure</li>
+            <li>Chemical reactions</li>
+            <li>Practical investigations</li>
+        </ul>
+    </div>
+    <!-- Physics -->
+    <div class="subject-item" data-subject="Physics">
+        <i class="fa-solid fa-atom"></i>
+        <span>Physics</span>
+        <ul class="subject-desc">
+            <li>Forces & motion</li>
+            <li>Energy & electricity</li>
+            <li>Waves & radioactivity</li>
+        </ul>
+    </div>
+    <!-- Environmental Studies -->
+    <div class="subject-item" data-subject="Envir. Studies">
+        <i class="fa-solid fa-leaf"></i>
+        <span>Envir. Studies</span>
+        <ul class="subject-desc">
+            <li>Ecosystems & biodiversity</li>
+            <li>Conservation & sustainability</li>
+            <li>Climate change</li>
+        </ul>
+    </div>
+    <!-- Business -->
+    <div class="subject-item" data-subject="Business">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Business</span>
+        <ul class="subject-desc">
+            <li>Marketing & finance</li>
+            <li>Business environment</li>
+            <li>Case study analysis</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Kenyan System Section (CBC · CBS) -->
+<h1 style="margin-top: 3rem; font-weight: 700; text-align: center;" class="igcse">🇰🇪 Kenyan System (CBC)</h1>
+<div class="subjects-grid" style="padding: 2rem 5%;">
+    <!-- Same subjects, different descriptions (focus on Kenyan curriculum) -->
+    <div class="subject-item" data-subject="Maths">
+        <i class="fa-solid fa-calculator"></i>
+        <span>Mathematics</span>
+        <ul class="subject-desc">
+            <li>Algebra, equations, graphs, geometry, numbers.</li>
+            <li>Step-by-step reasoning to get correct answers.</li>
+            <li>Finance, measurements, statistics, data analysis.</li>
+        </ul>
+    </div>
+    <div class="subject-item" data-subject="English">
+        <i class="fa-solid fa-book-open"></i>
+        <span>English</span>
+        <ul class="subject-desc">
+            <li>Comprehension & summary</li>
+            <li>Oral & written skills</li>
+            <li>Set book analysis</li>
+        </ul>
+    </div>
+    <div class="subject-item" data-subject="Geography">
+        <i class="fa-solid fa-earth-europe"></i>
+        <span>Geography</span>
+        <ul class="subject-desc">
+            <li>Statistical methods</li>
+            <li>Fieldwork techniques</li>
+            <li>Population & settlement</li>
+        </ul>
+    </div>
+    <div class="subject-item" data-subject="History">
+        <i class="fa-solid fa-clock"></i>
+        <span>History</span>
+        <ul class="subject-desc">
+            <li>World wars & independence</li>
+            <li>Governance & citizenship</li>
+            <li>Source interpretation</li>
+        </ul>
+    </div>
+    <div class="subject-item" data-subject="ICT">
+        <i class="fa-solid fa-laptop"></i>
+        <span>ICT</span>
+        <ul class="subject-desc">
+            <li>Word processing & presentations</li>
+            <li>Internet & email</li>
+            <li>Emerging technologies</li>
+        </ul>
+    </div>
+    <div class="subject-item" data-subject="Comp. Studies">
+        <i class="fa-solid fa-microchip"></i>
+        <span>Comp. Studies</span>
+        <ul class="subject-desc">
+            <li>Programming concepts</li>
+            <li>Data representation</li>
+            <li>Computer systems</li>
+        </ul>
+    </div>
+    <div class="subject-item" data-subject="Chemistry">
+        <i class="fa-solid fa-flask"></i>
+        <span>Chemistry</span>
+        <ul class="subject-desc">
+            <li>Acids, bases & salts</li>
+            <li>Organic chemistry intro</li>
+            <li>Laboratory safety</li>
+        </ul>
+    </div>
+    <div class="subject-item" data-subject="Physics">
+        <i class="fa-solid fa-atom"></i>
+        <span>Physics</span>
+        <ul class="subject-desc">
+            <li>Linear motion & optics</li>
+            <li>Current electricity</li>
+            <li>Experiments & graphs</li>
+        </ul>
+    </div>
+    <div class="subject-item" data-subject="Envir. Studies">
+        <i class="fa-solid fa-leaf"></i>
+        <span>Envir. Studies</span>
+        <ul class="subject-desc">
+            <li>Natural resources</li>
+            <li>Pollution & conservation</li>
+            <li>Environmental laws</li>
+        </ul>
+    </div>
+    <div class="subject-item" data-subject="Business">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Business</span>
+        <ul class="subject-desc">
+            <li>Entrepreneurship</li>
+            <li>Office practice</li>
+            <li>Business calculations</li>
+        </ul>
+    </div>
+</div>
+
+<!-- NEW: Clear Selection button -->
+<div style="text-align: center; margin: 1rem 0;">
+    <button id="clearSubjectsBtn" class="btn-secondary" style="padding: 0.6rem 2rem;">
+        <i class="fa-regular fa-trash-can"></i> Clear Selection
+    </button>
+</div>
+
+<div class="selected-count" id="selectedCount">Selected: 0</div>
+<div style="text-align: center; margin: 2rem;">
+    <a href="#" data-page="contact" class="btn-continue" id="continueToContact"><i class="fa-regular fa-calendar-check"></i> Continue to schedule</a>
+</div>
+        </section>
+
+        <!-- PRICING PAGE -->
+        <section id="pricing-page" class="page">
+            <h2 style="text-align: center; margin-top: 2rem;">Simple, flexible pricing (KES per session)</h2>
+            <p class="subhead" style="text-align: center;">Each session is 2 hours. Choose the plan that fits your goals.</p>
+            <div class="pricing-cards" style="padding: 2rem 5%;">
+                <div class="price-card" data-plan="Starter">
+                    <h3>Starter Plan</h3>
+                    <div class="price-detail">
+                        <span class="price">KES 1,800<span style="font-size: 1rem;">/session</span></span>
+                        <p class="session-total">KES 3,600 /week</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fa-regular fa-circle-check"></i> 2 sessions/week</li>
+                        <li><i class="fa-regular fa-circle-check"></i> 2 hours/session</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Quick Homework Help & Concept Refreshers</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="btn-outline choose-plan">Choose Starter</a>
+                </div>
+                <div class="price-card" data-plan="Standard">
+                    <h3>Standard Plan</h3>
+                    <div class="price-detail">
+                        <span class="price">KES 1,600<span style="font-size: 1rem;">/session</span></span>
+                        <p class="session-total">KES 3,200 /week</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fa-regular fa-circle-check"></i> 2 sessions/week</li>
+                        <li><i class="fa-regular fa-circle-check"></i> 2 hours/session</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Consistent Progress & Weekly Exam Preparation</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="btn-outline choose-plan">Choose Standard</a>
+                </div>
+                <div class="price-card" data-plan="Intensive">
+                    <h3>Intensive Plan</h3>
+                    <div class="price-detail">
+                        <span class="price">KES 1,400<span style="font-size: 1rem;">/session</span></span>
+                        <p class="session-total">KES 4,200 /week</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fa-regular fa-circle-check"></i> 3 sessions/week</li>
+                        <li><i class="fa-regular fa-circle-check"></i> 2 hours/session</li>
+                        <li><i class="fa-regular fa-circle-check"></i> The Complete Mastery Path — Includes deep dives into difficult topics</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="btn-outline choose-plan">Choose Intensive</a>
+                </div>
+                <div class="price-card" data-plan="Double">
+                    <h3>Double Plan (2 Students)</h3>
+                    <div class="price-detail">
+                        <span class="price">KES 2,000<span style="font-size: 1rem;">/session</span></span>
+                        <p class="session-total">KES 8,000 /week</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fa-regular fa-circle-check"></i> 4 sessions/week</li>
+                        <li><i class="fa-regular fa-circle-check"></i> 2 hours/session</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Split the Cost: Full attention for you and a study partner</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="btn-outline choose-plan">Choose Double</a>
+                </div>
+                <div class="price-card" data-plan="Group">
+                    <h3>The Study Squad (3/3+ Students)</h3>
+                    <div class="price-detail">
+                        <span class="price" style="color: red;">Only 800 per student!!</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fa-regular fa-circle-check"></i> 4 sessions/week</li>
+                        <li><i class="fa-regular fa-circle-check"></i> 2 hours/session</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Collaborative Learning: High energy, team-based study at our lowest rate</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="btn-outline choose-plan">Choose Group</a>
+                </div>
+                <div class="price-card custom-card" data-plan="Custom">
+                    <h3>Custom Plan</h3>
+                    <div class="price-detail">
+                        <span class="price">Flexible</span>
+                        <p class="session-total">Tailored to you</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fa-regular fa-circle-check"></i> Choose your sessions & hours</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Negotiable rate</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Contact for details</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="btn-outline choose-plan">Contact for custom</a>
+                </div>
+            </div>
+        
+            <!-- Payment Options – Card Style (like approach steps) -->
+            <div class="payment-grid">
+                <h3 class="payment-grid-title">Easy payment options</h3>
+                <h5 class="payment-notice">📌 **A quick note on payments:** <br>To secure your spot and help me prepare the best materials for our sessions, I kindly ask for <strong>50% of the total fees before we begin</strong>. The remaining 50% can be paid after the first session or at the end of the week – whichever suits you best.
+                This small deposit covers transport, printing, and any resources I put together just for you. Thank you for understanding – I can’t wait to get started!</h5>
+                <div class="payment-cards">
+                    <!-- M‑Pesa Till -->
+                    <div class="payment-card">
+                        <div class="payment-card-header">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            <h4>M‑Pesa (Till)</h4>
+                        </div>
+                        <div class="payment-card-detail">
+                            <span class="detail-label">Till number:</span>
+                            <span class="detail-value" id="mpesa-till">433250</span>
+                        </div>
+                    </div>
+
+                    <!-- NCBA Bank -->
+                    <div class="payment-card">
+                        <div class="payment-card-header">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <h4>NCBA (Loop)</h4>
+                        </div>
+                        <div class="payment-card-detail">
+                            <span class="detail-label">Paybill:</span>
+                            <span class="detail-value" id="ncba-paybill">714777</span>
+                        </div>
+                        <div class="payment-card-detail">
+                            <span class="detail-label">Account Name:</span>
+                            <span class="detail-value" id="ncba-name">JOSEPH KARIUKI</span>
+                        </div>
+                        <div class="payment-card-detail">
+                            <span class="detail-label">Account No:</span>
+                            <span class="detail-value" id="ncba-account">440200204990</span>
+                        </div>
+                    </div>
+
+                    <!-- I&M Bank -->
+                    <div class="payment-card">
+                        <div class="payment-card-header">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <h4>I&M Bank</h4>
+                        </div>
+                        <div class="payment-card-detail">
+                            <span class="detail-label">Paybill:</span>
+                            <span class="detail-value" id="im-paybill">542542</span>
+                        </div>
+                        <div class="payment-card-detail">
+                            <span class="detail-label">Account No:</span>
+                            <span class="detail-value" id="im-account">03107580716150</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="payment-note">After booking, I'll confirm your session and you can pay via any of these methods. Receipts provided.</p>
+            </div>
+        </section>
+
+        <!-- FAQ PAGE (no‑JS accordion) -->
+        <section id="faq-page" class="page">
+            <div style="padding: 2rem 5%; max-width: 900px; margin: 0 auto;">
+                <h2 style="text-align: center; margin-top: 2rem;">Frequently Asked Questions</h2>
+                <p class="subhead" style="text-align: center; margin-bottom: 3rem;">Everything you need to know about tutoring with Cloud Classroom</p>
+
+                <div class="faq-list">
+                    <details class="faq-details">
+                        <summary>How do online tutoring sessions work?</summary>
+                        <p>We meet via Google Meet or Zoom – whichever you prefer. I'll share my screen, use a digital whiteboard, and guide you through problems step by step. All you need is a device with internet and a quiet space.</p>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary>Which areas do you mostly teach?</summary>
+                        <p>We are available in: <b>Athi River, Mlolongo, Kitengela, Isinya</b> and <b>EPZ</b>. Any areas outside of that we can only offer Virtual lessons (*subject to negotiation).</p>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary>Can we reschedule a session if something comes up?</summary>
+                        <p>Absolutely! Life happens. Just let us know at least 4 hours in advance and we'll find a new time that works for both of us. No penalties, no stress.</p>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary>Do you offer discounts for siblings or groups?</summary>
+                        <p>Yes! Check out our <a href="#" data-page="pricing" class="faq-link">Pricing page</a> for the Double Plan (two students) and The Study Squad (3+ students). Group learning is effective and affordable.</p>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary>What subjects and levels do you teach?</summary>
+                        <p>See the <a href="#" data-page="subjects" class="faq-link">Subjects page</a> for the full list.</p>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary>How do I pay? Is M‑Pesa accepted?</summary>
+                        <p>Yes, M‑Pesa is accepted, alternately you can pay by our till number: <b>433250</b>. Bank transfer is also available. We'll agree on a plan and we'll share payment details after booking.</p>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary>What if I need extra help between sessions?</summary>
+                        <p>You can always WhatsApp us a quick question. For longer doubts, we can address them in the next session. We're here to support you, not just during scheduled hours.</p>
+                    </details>
+                </div>
+
+                <!-- Still have questions? -->
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p style="font-size: 1.2rem;">Still have questions? <a href="#" data-page="contact" class="faq-contact-link">Contact us directly</a> – We're happy to help.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE with Formspree integration -->
+        <section id="contact-page" class="page">
+            <div style="padding: 2rem 5%;">
+                <h2 style="text-align: center;">Reach your potential</h2>
+                <p class="subhead" style="text-align: center;">Free consultation — let's design your flexible learning path</p>
+
+                <!-- Display selected subjects and chosen plan -->
+                <div class="selected-summary" id="selectedSummary" style="text-align: center; margin-bottom: 1.5rem;"></div>
+
+                <div class="contact-row">
+                    <div class="contact-info">
+                        <h3>Joseph Kariuki</h3>
+                        <p><i class="fa-solid fa-envelope" style="color: var(--sky);"></i> sirjoseph044@gmail.com</p>
+                        <p><i class="fa-solid fa-phone" style="color: var(--sky);"></i> +254799199987</p>
+                        <p style="margin-top: 2rem;">Prefer to pick a time yourself?</p>
+                    </div>
+
+                    <!-- Enhanced booking form with Formspree -->
+                    <div class="schedule-widget">
+                        <h4><i class="fa-regular fa-calendar"></i> Book your session</h4>
+                        <form id="bookingForm" action="https://formspree.io/f/xzdaayyz" method="POST">
+                            <!-- Hidden field to set a custom email subject -->
+                            <input type="hidden" name="_subject" value="New tutoring booking from Cloud Classroom">
+
+                            <div class="form-group">
+                                <label for="name">Your name <i style="color: red;">*</i></label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="e.g., Jane Mwangi" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone number <i style="color: red;">*</i></label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="07 / 01" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com">
+                            </div>
+                            <div class="form-group">
+                            <label for="curriculum">Curriculum <i style="color: red;">*</i></label>
+                            <select id="curriculum" name="curriculum" class="form-input" required>
+                                <option value="">-- Select curriculum --</option>
+                                <option value="IGCSE">IGCSE (Pearson · Edexcel · CAIE)</option>
+                                <option value="CBC">CBC (Kenyan System)</option>
+                            </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="comment">Comment / Questions</label>
+                                <textarea id="comment" name="comment" class="form-input" rows="3" placeholder="Any specific topics or requests..."></textarea>
+                            </div>
+
+                            <div class="form-group date-picker">
+                                <label for="appointment-date">Select date to meet <i style="color: red;">*</i></label>
+                                <input type="date" id="appointment-date" name="date" min="" class="form-input" required>
+                            </div>
+
+                            <div class="form-group time-picker">
+                                <label for="appointment-time">Select time to meet<i style="color: red;">*</i></label>
+                                <select id="appointment-time" name="time" class="form-input" required>
+                                    <option value="">-- Choose a time --</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="09:30">09:30 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="10:30">10:30 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="11:30">11:30 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="12:30">12:30 PM</option>
+                                    <option value="13:00">01:00 PM</option>
+                                    <option value="13:30">01:30 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="14:30">02:30 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="15:30">03:30 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="16:30">04:30 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn-primary" id="sendEmailBtn" style="margin-top: 1.5rem; width: 100%;">
+                                <i class="fa-regular fa-envelope"></i> Send booking request
+                            </button>
+                            <p class="form-note" id="emailStatus"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><i class="fa-solid fa-copyright"></i> 2025 Cloud Classroom — small world, big ambition. <br>Built with <a href="update-fund.html" style="text-decoration: none; color: inherit;"><i class="fa-regular fa-heart" style="color: var(--peach);"></i></a> for students & parents.</p>
+        <!-- Hidden Progress Update Panel (triggered by heart icon) -->
+    <div id="progressUpdatePanel" class="progress-update-panel">
+        <h4><i class="fa-solid fa-lock"></i> Update Diploma Fund</h4>
+        <input type="number" id="secretAmount" placeholder="New amount (KES)" min="0" step="100">
+        <input type="password" id="secretPassphrase" placeholder="Passphrase">
+        <button id="secretSaveBtn" class="btn-primary">Update</button>
+        <button id="secretCancelBtn" class="btn-secondary">Cancel</button>
+    </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Custom Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+    <div class="modal-content">
+        <h3><i class="fa-solid fa-triangle-exclamation"></i> Clear all subjects?</h3>
+        <p>This will remove all selected subjects from both the subjects page and the contact form summary.</p>
+        <div class="modal-buttons">
+            <button id="modalAccept" class="btn-primary">Accept</button>
+            <button id="modalDecline" class="btn-secondary">Decline</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

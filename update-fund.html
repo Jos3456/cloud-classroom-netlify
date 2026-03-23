@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Diploma Fund · Cloud Classroom</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff8a5c' d='M75 50c0-8-6-15-14-15-3 0-6 1-9 3-2-7-8-12-16-12-9 0-16 7-16 16 0 1 0 2 0 3-7 1-12 7-12 14 0 8 7 15 15 15h32c8 0 15-7 15-15 0-2 0-4-1-6 3-2 6-5 6-9z'/%3E%3C/svg%3E">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Betania+Patmos+In+GDL&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Comfortaa:wght@400;600&family=Pacifico&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Simple centered container */
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #f0f9ff 0%, #e6f0fa 100%);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 1rem;
+        }
+        .update-card {
+            background: var(--card-bg, white);
+            border-radius: 60px;
+            padding: 3rem;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2);
+            border: 1px solid var(--peach);
+            text-align: center;
+        }
+        .update-card h2 {
+            color: var(--peach);
+            margin-bottom: 1rem;
+        }
+        .update-card input {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.8rem 0;
+            border-radius: 50px;
+            border: 1px solid var(--sky-light);
+            font-size: 1rem;
+            background: white;
+        }
+        .update-card button {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--sky);
+            text-decoration: none;
+        }
+        .message {
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+        .current-info {
+            background: rgba(42,127,222,0.1);
+            padding: 1rem;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="update-card">
+        <i class="fa-solid fa-piggy-bank" style="font-size: 4rem; color: var(--peach); margin-bottom: 1rem;"></i>
+        <h2>Update Diploma Fund</h2>
+        
+        <div class="current-info" id="currentInfo">
+            <!-- Will be filled by JS -->
+        </div>
+        
+        <input type="number" id="addAmount" placeholder="Amount to add (KES)" min="1" step="100">
+        <input type="password" id="passphrase" placeholder="Passphrase">
+
+        <button id="updateBtn" class="btn-primary">Add to Fund</button>
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to main site</a>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        const targetAmount = 200000;
+        let currentAmount = parseInt(localStorage.getItem('diplomaFund')) || 0;
+
+        function displayCurrent() {
+            const percent = Math.min(100, (currentAmount / targetAmount) * 100).toFixed(0);
+            document.getElementById('currentInfo').innerHTML = `
+                <strong>Current: KES ${currentAmount.toLocaleString()}</strong><br>
+                (${percent}% of KES 200,000 goal)
+            `;
+        }
+        displayCurrent();
+
+        document.getElementById('updateBtn').addEventListener('click', function() {
+            const addValue = parseInt(document.getElementById('addAmount').value);
+            const passphrase = document.getElementById('passphrase').value.trim();
+
+            if (isNaN(addValue) || addValue <= 0) {
+                document.getElementById('message').textContent = 'Please enter a valid amount to add.';
+                document.getElementById('message').style.color = 'red';
+                return;
+            }
+
+            if (passphrase !== 'DIE') {
+                document.getElementById('message').textContent = 'Incorrect passphrase.';
+                document.getElementById('message').style.color = 'red';
+                return;
+            }
+
+            // Add to current amount
+            currentAmount += addValue;
+            localStorage.setItem('diplomaFund', currentAmount);
+            
+            document.getElementById('message').textContent = `✅ Added KES ${addValue.toLocaleString()}! New total: KES ${currentAmount.toLocaleString()}`;
+            document.getElementById('message').style.color = 'green';
+            displayCurrent();
+
+            // Clear fields
+            document.getElementById('addAmount').value = '';
+            document.getElementById('passphrase').value = '';
+        });
+    </script>
+</body>
+</html>
